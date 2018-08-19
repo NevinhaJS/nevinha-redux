@@ -1,6 +1,11 @@
 {
 	"name": "nevinha-redux",
-	"version": "1.0.0",
+  "version": "1.0.0",
+  "author": {
+    "email": "clovidasilvaneto@gmail.com",
+    "name": "Clóvis Neto",
+    "url": "http://clovisdasilvaneto.github.io"
+  },
 	"description": "A library to use redux in NevinhaJS",
 	"main": "dist/nevinha-redux.cjs.js",
 	"module": "dist/nevinha-redux.esm.js",
