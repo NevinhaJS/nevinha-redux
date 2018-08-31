@@ -5,13 +5,22 @@ export function Connect(mapDispatchToProps, mapStateToProps) {
     class Connect extends NevinhaComponent {
       constructor(props, context){
         super(props, context);
+        const mappedDispatch = mapDispatchToProps(this.getDispatch());
 
-        this.state = {
-          mappedDispatch: mapDispatchToProps(this.getDispatch()),
-          mappedState: mapStateToProps(this.getStoreState())
+        if(mapStateToProps) {
+          this.state = {
+            mappedDispatch,
+            mappedState: mapStateToProps(this.getStoreState())
+          }
+
+          this.unsubscribe = this.subscribeStore();
+
+        }else {
+          this.state = {
+            mappedDispatch,
+          }
         }
 
-        this.unsubscribe = this.subscribeStore();
       }
 
       componentUnmount(){
